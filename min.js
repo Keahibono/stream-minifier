@@ -12,6 +12,13 @@ whiteSpaceDelete._transform = function(chunk, encoding, callback){
   process.stdout.write(string, 'utf8');
 };
 
+//better tranform function
+
+// whiteSpaceDelete._transform = function(chunk, encoding, callback){
+//   this.push(chunk.toString().replace(/\s/g, "").replace(/(\/\*).*(\*\/)/g, "");
+//   return callback();
+// };
+
  process.stdin
     .pipe(whiteSpaceDelete)
     .pipe(process.stdout);
